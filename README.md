@@ -190,15 +190,38 @@ Built with Radix UI primitives for accessibility and customization:
 - Database migrations require manual Supabase configuration
 - SMS functionality not yet implemented
 
+## 🔑 Key Pages & Routes
+
+### Public Routes
+- `/` - Homepage with search call-to-action
+- `/search` - Business search page (name or registration number)
+- `/business/[id]` - Business profile page with QR code
+
+### Admin Routes
+- `/admin/login` - Admin authentication
+- `/admin/dashboard` - Admin dashboard with:
+  - Business statistics
+  - Pending verifications
+  - Recently verified businesses
+  - Verify/unverify actions
+
+### API Routes
+- `GET /api/businesses/search?query={query}&type={name|registrationNumber}` - Search businesses
+- `GET /api/businesses/[id]` - Get business profile
+- `GET /api/businesses/[id]/qr` - Generate QR code
+- `POST /api/admin/businesses/verify` - Verify/unverify business (admin only)
+
 ## 📝 Next Steps
 
-1. Set up Supabase database and configure connection string
-2. Create admin users in Supabase Auth
-3. Implement business search functionality
-4. Add business registration form
-5. Implement verification workflow
-6. Add Typesense for advanced search
-7. Integrate Solana + IPFS for blockchain verification
+1. ✅ ~~Set up Supabase database and configure connection string~~
+2. ✅ ~~Create admin users in Supabase Auth~~
+3. ✅ ~~Implement business search functionality~~
+4. 📍 **Add seed data for testing** - Create sample businesses for testing
+5. 📍 **Add business registration form** - Allow public submission of new businesses
+6. Implement email notifications for verification
+7. Add Typesense for advanced search
+8. Integrate Solana + IPFS for blockchain verification
+9. Implement SMS platform integration
 
 ## 🤝 Contributing
 

@@ -64,6 +64,7 @@ export function SearchBar({ onSearch, isLoading = false, defaultType = 'name' }:
             {/* Search Input */}
             <div className="flex gap-2">
                 <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                         type="search"
                         placeholder={
@@ -74,7 +75,7 @@ export function SearchBar({ onSearch, isLoading = false, defaultType = 'name' }:
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         disabled={isLoading}
-                        className="pr-10"
+                        className="pl-10 pr-10 bg-secondary/50 border-transparent focus-visible:bg-background focus-visible:border-input transition-all"
                         aria-label={`Search by ${searchType === 'name' ? 'business name' : 'registration number'}`}
                     />
                     {query && (
@@ -89,7 +90,6 @@ export function SearchBar({ onSearch, isLoading = false, defaultType = 'name' }:
                     )}
                 </div>
                 <Button type="submit" disabled={isLoading || !query.trim()}>
-                    <Search className="h-4 w-4 mr-2" />
                     {isLoading ? 'Searching...' : 'Search'}
                 </Button>
             </div>

@@ -2,8 +2,7 @@
 
 import Link from 'next/link'
 import { BadgeCheck } from 'lucide-react'
-import { formatDistanceToNow } from 'date-fns'
-import { cn } from '@/lib/utils'
+import { cn, formatDateDistance } from '@/lib/utils'
 
 interface VerifiedBadgeProps {
     businessId: string
@@ -43,15 +42,15 @@ export function VerifiedBadge({
     }
 
     const sizes = sizeMap[size]
-    const dateText = formatDistanceToNow(new Date(verifiedAt), { addSuffix: true })
+    const dateText = formatDateDistance(new Date(verifiedAt))
 
     return (
         <Link
             href={`/business/${businessId}`}
             className={cn(
-                'inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5',
-                'text-green-800 hover:bg-green-200 transition-colors',
-                'dark:bg-green-900 dark:text-green-100 dark:hover:bg-green-800',
+                'inline-flex items-center rounded-full bg-[hsl(var(--success))] px-2.5 py-0.5',
+                'text-white hover:bg-[hsl(var(--success))]/90 transition-colors',
+                'dark:bg-[hsl(var(--success))] dark:text-white dark:hover:bg-[hsl(var(--success))]/90',
                 sizes.gap,
                 className
             )}
