@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { formatDateDistance } from '@/lib/utils'
 
+// Mark this page as dynamic to prevent static generation during build
+export const dynamic = 'force-dynamic'
+
 interface BusinessPageProps {
     params: {
         id: string
