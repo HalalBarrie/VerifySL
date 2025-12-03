@@ -32,7 +32,7 @@ export async function GET(
         const qrCodeBuffer = await generateQRCodeBuffer(id, width)
 
         // Return as PNG image
-        return new NextResponse(qrCodeBuffer, {
+        return new NextResponse(new Uint8Array(qrCodeBuffer), {
             status: 200,
             headers: {
                 'Content-Type': 'image/png',

@@ -24,7 +24,7 @@ export async function generateQRCode(
         }
 
         // Return as data URL for PNG
-        return await QRCode.toDataURL(profileUrl, {
+        return QRCode.toDataURL(profileUrl, {
             width,
             height,
             errorCorrectionLevel: 'M',
