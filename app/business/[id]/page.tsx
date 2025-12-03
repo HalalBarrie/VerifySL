@@ -174,7 +174,7 @@ export default async function BusinessPage({ params }: BusinessPageProps) {
                                         />
                                     </div>
                                     <p className="text-sm text-center text-muted-foreground">
-                                        Scan to verify this business's official registration status.
+                                        Scan to verify this business&apos;s official registration status.
                                     </p>
                                     <Button className="w-full" variant="outline" asChild>
                                         <a href={qrCodeDataUrl} download={`verifysl-${business.registrationNumber}.png`}>

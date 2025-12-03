@@ -1,5 +1,6 @@
 'use client'
 
+import NextImage from 'next/image'
 import { useState, useEffect } from 'react'
 import { Download, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -67,10 +68,13 @@ export function QRCodeDisplay({ businessId, businessName }: QRCodeDisplayProps) 
 
                 {!loading && !error && (
                     <>
-                        <img
+                        <NextImage
                             src={qrUrl}
                             alt={`QR code for ${businessName}`}
-                            className="w-[300px] h-[300px] rounded-lg border print:border-0"
+                            width={300}
+                            height={300}
+                            className="rounded-lg border print:border-0"
+                            unoptimized
                         />
                         <p className="text-sm text-muted-foreground text-center">
                             Scan to view profile

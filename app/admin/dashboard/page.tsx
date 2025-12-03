@@ -3,7 +3,8 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { getAllBusinesses, getUnverifiedBusinesses, getVerifiedBusinesses } from '@/lib/services/search'
+import { getAllBusinesses } from '@/lib/services/search'
+import { getUnverifiedBusinesses, getVerifiedBusinesses } from '@/lib/services/verification'
 import { BusinessTable } from '@/components/admin/business-table'
 import { Building2, CheckCircle, Clock } from 'lucide-react'
 
