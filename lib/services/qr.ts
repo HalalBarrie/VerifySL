@@ -13,7 +13,7 @@ export async function generateQRCode(
 ): Promise<string> {
     try {
         const profileUrl = getProfileUrl(businessId)
-        const { width = 300, height = 300, format = 'png' } = options
+        const { width = 300, format = 'png' } = options
 
         if (format === 'svg') {
             return await QRCode.toString(profileUrl, {
@@ -24,9 +24,8 @@ export async function generateQRCode(
         }
 
         // Return as data URL for PNG
-        return QRCode.toDataURL(profileUrl, {
+        return await QRCode.toDataURL(profileUrl, {
             width,
-            height,
             errorCorrectionLevel: 'M',
             margin: 2
         })

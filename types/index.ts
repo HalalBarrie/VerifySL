@@ -53,7 +53,6 @@ export interface VerificationResponse {
 // QR Code types
 export interface QRCodeOptions {
     width?: number
-    height?: number
     format?: 'png' | 'svg'
 }
 
